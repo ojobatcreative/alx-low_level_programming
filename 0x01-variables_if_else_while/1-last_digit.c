@@ -7,7 +7,6 @@
  *
  * Return: Always 0 (Succcess)
  */
-
 int main(void)
 {
 	int n;
@@ -19,15 +18,15 @@ int main(void)
 
 	if (n % 10 > 5)
 
-		printf("and is greater that 5\n");
+	printf("and is greater that 5\n");
 
 	else if (n % 10 == 0)
 
-		printf("and is 0\n");
+	printf("and is 0\n");
 
 	else if (n % 10 < 6 && n % 10 != 0)
 
-		printf("and is less than 6 and not 0\n");
+	printf("and is less than 6 and not 0\n");
 
 	return (0);
 }
