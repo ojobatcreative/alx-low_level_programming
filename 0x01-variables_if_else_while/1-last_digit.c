@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - This prints the last digit of a random variable n
+ * main-this prints the last digit of a random variable n
  *
  * Return: Always 0 (Succcess)
  */
@@ -14,7 +14,7 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	printf("Last digit of %d ", n, n % 10);
+	printf("Last digit of %d is %d ", n, n % 10);
 
 	if (n % 10 > 5)
 
