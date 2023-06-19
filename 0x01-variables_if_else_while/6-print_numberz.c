@@ -7,12 +7,12 @@
 */
 int main(void)
 {
-	int num;
+	int ty;
 
-	for (num = 48; num < 58; num++)
+	for (ty = 48; ty < 58; ty++)
 
 	{
-	putchar(num);
+		putchar(ty);
 	}
 
 	putchar('\n');
