@@ -7,19 +7,21 @@
 */
 int main(void)
 {
-	int num;
+	int qtrz;
 
-	for (num = '0'; num <= '9'; num++)
+	for (qtrz = '0'; qtrz <= '9'; qtrz++)
+	
 	{
-	putchar(num);
-	if (num != '9')
+	putchar(qtrz);
+
+	if (qtrz != '9')
+		
 		{
-		putchar(',');
-		putchar(' ');
+			putchar(',');
+			putchar(' ');
 		}
 
 	}
-
 	putchar('\n');
 
 	return (0);
