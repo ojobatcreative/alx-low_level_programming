@@ -9,24 +9,26 @@
 int main(void)
 
 {
-	int num1, num2, num3;
+	int qtrz1;
+        int qtrz2;
+	int qtrz3;
 
-	for (num1 = 48; num1 < 58; num1++)
+	for (qtrz1 = 48; qtrz1 < 58; qtrz1++)
 	{
-		for (num2 = 49; num2 < 58; num2++)
+		for (qtrz2 = 49; qtrz2 < 58; qtrz2++)
 		{
-			for (num3 = 50; num3 < 58; num3++)
+			for (qtrz3 = 50; qtrz3 < 58; qtrz3++)
 			{
-				if (num3 > num2 && num2 > num1)
+				if (qtrz3 > qtrz2 && qtrz2 > qtrz1)
 
 				{
-					putchar(num1);
+					putchar(qtrz1);
 
-					putchar(num2);
+					putchar(qtrz2);
 
-					putchar(num3);
+					putchar(qtrz3);
 
-					if (num1 != 55 || num2 != 56)
+					if (qtrz1 != 55 || qtrz2 != 56)
 
 					{
 						putchar(',');
