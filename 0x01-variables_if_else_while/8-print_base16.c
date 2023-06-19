@@ -7,15 +7,15 @@
 */
 int main(void)
 {
-	char alphaNum;
+	char a16m;
 
-	for (alphaNum = '0'; alphaNum <= '9'; alphaNum++)
+	for (a16m = '0'; a16m <= '9'; a16m++)
 	{
-	putchar(alphaNum);
+	putchar(a16m);
 	}
-	for (alphaNum = 'a'; alphaNum <= 'f'; alphaNum++)
+	for (a16m = 'a'; a16m <= 'f'; a16m++)
 	{
-	putchar(alphaNum);
+	putchar(a16m);
 	}
 
 	putchar('\n');
