@@ -9,21 +9,21 @@
 int main(void)
 
 {
-	int num1, num2;
+	int qtrz1, qtrz2;
 
-	for (num1 = 0; num1 < 100; num1++)
+	for (qtrz1 = 0; qtrz1 < 100; qtrz1++)
 
 	{
-		for (num2 = 0; num2 < 100; num2++)
+		for (qtrz2 = 0; qtrz2 < 100; qtrz2++)
 		{
-			if (num1 < num2)
+			if (qtrz1 < qtrz2)
 			{
-				putchar((num1 / 10) + 48);
-				putchar((num1 % 10) + 48);
+				putchar((qtrz1 / 10) + 48);
+				putchar((qtrz1 % 10) + 48);
 				putchar(' ');
-				putchar((num2 / 10) + 48);
-				putchar((num2 % 10) + 48);
-				if (num1 != 98 || num2 != 99)
+				putchar((qtrz2 / 10) + 48);
+				putchar((qtrz2 % 10) + 48);
+				if (qtrz1 != 98 || qtrz2 != 99)
 				{
 					putchar(',');
 					putchar(' ');
