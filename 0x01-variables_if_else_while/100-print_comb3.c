@@ -7,25 +7,25 @@
 */
 int main(void)
 {
-	int num1, num2;
+	int qtrz1, qtrz2;
 
-	for (num1 = '0'; num1 <= '9'; num1++)
+	for (qtrz1 = '0'; qtrz1 <= '9'; qtrz1++)
 	{
-	for (num2 = num1; num2 <= '9'; num2++)
-	{
-	if (num1 != num2)
-	{
-	putchar(num1);
-	putchar(num2);
+		for (qtrz2 = qtrz1; qtrz2 <= '9'; qtrz2++)
+		{
+			if (qtrz1 != qtrz2)
+			{
+				putchar(qtrz1);
+				putchar(qtrz2);
 
-	if (num1 != '8' || num2 != '9')
+				if (qtrz1 != '8' || qtrz2 != '9')
 
-	{
-	putchar(',');
-	putchar(' ');
-	}
-	}
-	}
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
 	}
 
 	putchar('\n');
