@@ -13,7 +13,6 @@ void print_alphabet(void)
 
 {
 	char pal;
-	
 	for (pal = 97; pal <= 122; pal++)
 	{
 		_putchar(pal);
