@@ -16,4 +16,4 @@ This project will include tasks:
 
 and 5 advanced tasks.
 
-Project was launched at 6:00am 20th of June 2023  
+Project was launched at 6:00am 20th of June  
