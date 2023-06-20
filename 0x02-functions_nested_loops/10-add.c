@@ -2,8 +2,8 @@
 
 /**
  * add - Adds two values
- * @1: is the first value
- * @2: is the second value
+ * @n1: is the first value
+ * @n2: is the second value
  * Return: Integer value
  */
 
