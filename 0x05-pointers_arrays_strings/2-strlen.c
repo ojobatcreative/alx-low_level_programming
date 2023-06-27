@@ -19,6 +19,5 @@ int _strlen(char *s)
 	}
 	}
 
-	return lgt;
+	return (lgt);
 }
-
