@@ -26,4 +26,4 @@ void rev_string(char *s)
 		s[j] = s[lgt1];
 		s[lgt1--] = bat;
 	}
-)
+}
