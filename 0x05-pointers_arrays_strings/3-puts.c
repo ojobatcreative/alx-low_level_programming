@@ -3,7 +3,10 @@
 /**
  * _puts - prints a string followed by a new line
  * @str: string to print
+ * @c: Value of c
+ * Return: Always 0
  */
+
 int _putchar(char c);
 void _puts(char *str)
 {
