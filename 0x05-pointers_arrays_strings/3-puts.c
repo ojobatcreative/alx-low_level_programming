@@ -6,8 +6,7 @@
  * @c: Value of c
  * Return: Always 0
  */
-
-int _putchar(char str);
+int _putchar;
 void _puts(char *str)
 {
 	if (str == NULL)
