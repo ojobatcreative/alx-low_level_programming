@@ -36,6 +36,7 @@ void rev_string(char *n)
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int ovlf = 0, t = 0, u = 0, digits = 0;
+
 	int val1 = 0, val2 = 0, temp_tot = 0;
 
 	while (*(n1 + t) != '\0')
