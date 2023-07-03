@@ -8,10 +8,10 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0, sum = 0, size^2;
+	int i = 0, sum = 0, siza;
 
-	size^2 = size * size;
-	while (i < size^2)
+	siza = size * size;
+	while (i < siza)
 	{
 		if (i % (size + 1) == 0)
 			sum += a[i];
@@ -20,7 +20,7 @@ void print_diagsums(int *a, int size)
 	printf("%d, ", sum);
 
 	{
-		if (i % (size - 1) == 0 && i != (size^2 - 1) && i != 0)
+		if (i % (size - 1) == 0 && i != (siza - 1) && i != 0)
 			sum += a[i];
 		i++;
 	}
