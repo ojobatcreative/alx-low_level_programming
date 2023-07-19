@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 	for (ig = 0; ig < bytes; ig++)
 	{
-		if (i == bytes - 1)
+		if (ig == bytes - 1)
 		{
 			printf("%02hhx\n", arr[ig]);
 			break;
