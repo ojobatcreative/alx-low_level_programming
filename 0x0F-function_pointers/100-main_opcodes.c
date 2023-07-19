@@ -31,12 +31,12 @@ int main(int argc, char *argv[])
 
 	for (ig = 0; ig < bytes; ig++)
 	{
-		if (ig == bytes - 1)
+		if (i == bytes - 1)
 		{
 			printf("%02hhx\n", arr[ig]);
 			break;
 		}
-		printf("%02hhx ", arr[g]);
+		printf("%02hhx ", arr[ig]);
 	}
 	return (0);
 }
