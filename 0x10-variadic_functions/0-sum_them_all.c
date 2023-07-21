@@ -5,11 +5,12 @@
  * @n: resepresents the number of arguments
  * Return: Always 0.
  */
+
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list mon_numz;
 	unsigned int count;
-	int sum;
+	int sum = 0;
 
 	if (n == 0)
 		return (0);
