@@ -1,22 +1,18 @@
 section .data
-	message db 'Hello, Holberton', 0
-	format db '%s', 0
+	format db "Hello, Holberton", 0
 
 section .text
 	extern printf
 
-global _start
-
-_start:
-	sub rsp, 8
+global main
+main:
+	sub rsp, 8     ; Align stack
 
 	mov rdi, format
-	mov rsi, message
-	xor eax, eax
+	xor eax, eax   ; Clear EAX register
 	call printf
 
-	add rsp, 8
+	add rsp, 8     ; Restore stack
 
-	mov eax, 60     ; exit syscall number
-	xor edi, edi    ; exit status code (0)
-	syscall
+	xor eax, eax   ; Return 0 from main
+	ret
