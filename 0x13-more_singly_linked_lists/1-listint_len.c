@@ -19,4 +19,4 @@ size_t listint_len(const listint_t *h)
 		pntr = nuelm->next;
 	}
 	return (nuelm);
-} 
+}
