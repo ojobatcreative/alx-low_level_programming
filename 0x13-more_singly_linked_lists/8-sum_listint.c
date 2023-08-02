@@ -11,7 +11,7 @@
 
 int sum_listint(listint_t *head)
 {
-	int sumz = 0:
+	int sumz = 0;
 	listint_t *crnt;
 
 	crnt = head;
