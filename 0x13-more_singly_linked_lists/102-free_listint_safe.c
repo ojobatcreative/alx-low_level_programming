@@ -19,7 +19,7 @@ size_t free_listint_safe(listint_t **h)
 
 	while (crnt != NULL)
 	{
-		sizze;
+		sizze++;
 		temp = crnt;
 		crnt = crnt->next;
 
