@@ -12,7 +12,7 @@
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_int *crnt;
+	listint_t *crnt;
 	unsigned int nulem = 0;
 
 	crnt = head;
