@@ -7,28 +7,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int prnt_bin = 1UL << ((sizeof(unsigned long int) * 8) - 1);
-	int flag_bin = 0;
+	int bin, num_bin = 0;
+	unsigned long int crnt;
 
-	if (n == 0)
+	for (bin = 63; bin >= 0; bin--)
 	{
-		putchar('0');
-		return;
-	}
+		crnt = n >> bin;
 
-	while (prnt_bin)
-	{
-		if (n & prnt_bin)
+		if (crnt & 1)
 		{
-			putchar('1');
-			flag_bin = 1;
+			_putchar('1');
+			num_bin++;
 		}
-		else if (flag_bin)
-		{
-			putchar('0');
-		}
-		prnt_bin >>= 1;
+		else if (num_bin)
+			_putchar('0');
 	}
-
-	putchar('\n');
+	if (!num_bin)
+		_putchar('0');
 }
