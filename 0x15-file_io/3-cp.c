@@ -1,67 +1,68 @@
 #include "main.h"
-#include <stdio.h>
 
-#define BUFFER_SIZE 1024
-
+void check_IO_stat(int stat, int fd, char *filename, char mode);
 /**
-* print_error_and_exit - Print an error message and exit with a given code
-* @code: Exit code
-* @message: Error message
-*/
-
-void print_error_and_exit(int code, const char *message)
+ * main - copies the content of one file to another
+ * @argc: argument count
+ * @argv: arguments passed
+ *
+ * Return: 1 on success, exit otherwise
+ */
+int main(int argc, char *argv[])
 {
-	dprintf(STDERR_FILENO, "Error : %s\n", message);
-	exit(code);
+	int source, d, n_read = 1024, wrote, close_source, close_d;
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	char buffer[1024];
+
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	source = open(argv[1], O_RDONLY);
+	check_IO_stat(source, -1, argv[1], 'O');
+	d = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	check_IO_stat(d, -1, argv[2], 'W');
+	while (n_read == 1024)
+	{
+		n_read = read(source, buffer, sizeof(buffer));
+		if (n_read == -1)
+			check_IO_stat(-1, -1, argv[1], 'O');
+		wrote = write(dest, buffer, n_read);
+		if (wrote == -1)
+			check_IO_stat(-1, -1, argv[2], 'W');
+	}
+	close_source = close(source);
+	check_IO_stat(close_source, source, NULL, 'C');
+	close_d = close(d);
+	check_IO_stat(close_d, d, NULL, 'C');
+	return (0);
 }
 
 /**
-* main - Program starts here
-* @argc: Argument count
-* @argv: Argument Vector
-* Return: Exit code
-*/
-
-int main(int argc, char *argv[])
+ * check_IO_stat - checks if a file can be opened or closed
+ * @stat: file descriptor of the file to be opened
+ * @filename: name of the file
+ * @mode: closing or opening
+ * @fd: file descriptor
+ *
+ * Return: void
+ */
+void check_IO_stat(int stat, int fd, char *filename, char mode)
 {
-	if (argc != 3)
+	if (mode == 'C' && stat == -1)
 	{
-		print_error_and_exit(97, "Usage : cp file_from file_to");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
 	}
-	const char *file_from = argv[1];
-	const char *file_to = argv[2];
-	int file_des_from = open(file_from, O_RDONLY);
-
-	if (file_des_from == -1)
+	else if (mode == 'O' && stat == -1)
 	{
-		print_error_and_exit(98, strerror(errno));
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
 	}
-	int file_des_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-
-	if (file_des_to == -1)
+	else if (mode == 'W' && stat == -1)
 	{
-		print_error_and_exit(99, strerror(errno));
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
 	}
-	char buffer[BUFFER_SIZE];
-	ssize_t read_byte, written_byte;
-
-	while ((read_byte = read(file_des_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		written_byte = write(file_des_to, buffer, read_byte);
-		if (written_byte == -1)
-		print_error_and_exit(99, strerror(errno));
-	}
-	if (read_byte == -1)
-	{
-		print_error_and_exit(98, strerror(errno));
-	}
-	if (close(file_des_from) == -1)
-	{
-		print_error_and_exit(100, strerror(errno));
-	}
-	if (close(file_des_to) == -1)
-	{
-		print_error_and_exit(100, strerror(errno));
-	}
-	return (0);
 }
