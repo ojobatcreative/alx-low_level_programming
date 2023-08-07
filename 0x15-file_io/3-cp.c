@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		n_read = read(source, buffer, sizeof(buffer));
 		if (n_read == -1)
 			check_IO_stat(-1, -1, argv[1], 'O');
-		wrote = write(dest, buffer, n_read);
+		wrote = write(d, buffer, n_read);
 		if (wrote == -1)
 			check_IO_stat(-1, -1, argv[2], 'W');
 	}
